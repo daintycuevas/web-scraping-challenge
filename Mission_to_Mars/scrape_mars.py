@@ -3,25 +3,10 @@ from splinter import Browser
 from bs4 import BeautifulSoup 
 from webdriver_manager.chrome import ChromeDriverManager
 import time
-import pymongo
-
-
-# Initialize PyMongo to work with MongoDBs
-conn = 'mongodb://localhost:27017'
-client = pymongo.MongoClient(conn)
-
-# Define database and collection
-db = client.mars_db
-collection = db.items
-
-
-def init_browser():
-    executable_path = {'executable_path': ChromeDriverManager().install()}
-    return Browser('chrome', **executable_path, headless=False)
-
 
 def scrape_info():
-    brower = init_browser
+    executable_path = {'executable_path': ChromeDriverManager().install()}
+    browser = Browser('chrome', **executable_path, headless=False)
 
     url = 'https://mars.nasa.gov/news/'
     browser.visit(url)
@@ -141,6 +126,9 @@ def scrape_info():
     for title, url in zip(all_title, all_img_url):
         hemisphere_image_urls = (f"'title': {title}, 'img_url': {img_url}")
         print(hemisphere_image_urls)
+
+if __name__ == "__scrape_info__":
+    scrape_info()
 
 
 
