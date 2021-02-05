@@ -3,6 +3,16 @@ from splinter import Browser
 from bs4 import BeautifulSoup 
 from webdriver_manager.chrome import ChromeDriverManager
 import time
+import pymongo
+
+
+# Initialize PyMongo to work with MongoDBs
+conn = 'mongodb://localhost:27017'
+client = pymongo.MongoClient(conn)
+
+# Define database and collection
+db = client.mars_db
+collection = db.items
 
 
 def init_browser():
