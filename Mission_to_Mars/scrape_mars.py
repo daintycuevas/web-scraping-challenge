@@ -3,6 +3,7 @@ from splinter import Browser
 from bs4 import BeautifulSoup 
 from webdriver_manager.chrome import ChromeDriverManager
 import time
+import pandas as pd
 
 def scrape_info():
     executable_path = {'executable_path': ChromeDriverManager().install()}
@@ -53,8 +54,6 @@ def scrape_info():
 
 
     # Get Mars facts table
-    import pandas as pd
-
     url = 'https://space-facts.com/mars/'
 
     table = pd.read_html(url)
