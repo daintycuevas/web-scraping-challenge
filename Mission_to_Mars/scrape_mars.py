@@ -15,7 +15,7 @@ def scrape_info():
 
     # Scrape news page into bsoup
     html = browser.html
-    soup = BeautifulSoup(html, 'lxml')
+    soup = BeautifulSoup(html, 'html.parser')
 
     slides = soup.find_all('div', class_='list_text')
 
@@ -74,7 +74,7 @@ def scrape_info():
     url = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/cerberus_enhanced'
     browser.visit(url)
     html = browser.html
-    soup = BeautifulSoup(html, 'lxml')
+    soup = BeautifulSoup(html, 'html.parser')
 
     title = soup.find('h2', class_='title').text
     all_title.append(title)
@@ -87,7 +87,7 @@ def scrape_info():
     url = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/schiaparelli_enhanced'
     browser.visit(url)
     html = browser.html
-    soup = BeautifulSoup(html, 'lxml')
+    soup = BeautifulSoup(html, 'html.parser')
 
     title = soup.find('h2', class_='title').text
     all_title.append(title)
@@ -100,7 +100,7 @@ def scrape_info():
     url = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/syrtis_major_enhanced'
     browser.visit(url)
     html = browser.html
-    soup = BeautifulSoup(html, 'lxml')
+    soup = BeautifulSoup(html, 'html.parser')
 
     title = soup.find('h2', class_='title').text
     all_title.append(title)
@@ -113,7 +113,7 @@ def scrape_info():
     url = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/valles_marineris_enhanced'
     browser.visit(url)
     html = browser.html
-    soup = BeautifulSoup(html, 'lxml')
+    soup = BeautifulSoup(html, 'html.parser')
 
     title = soup.find('h2', class_='title').text
     all_title.append(title)
@@ -127,10 +127,9 @@ def scrape_info():
         hemisphere_image_urls = (f"'title': {title}, 'img_url': {img_url}")
         print(hemisphere_image_urls)
 
-if __name__ == "__scrape_info__":
-    scrape_info()
 
-
+if __name__=="__main__":
+    print(scrape_info())
 
 
 
