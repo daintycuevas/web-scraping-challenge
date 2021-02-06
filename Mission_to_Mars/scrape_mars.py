@@ -119,7 +119,7 @@ def scrape():
                 'image_title': img_title,
                 'image_url': img_url
                 }
-        print(results)
+        return results
     
 
 
