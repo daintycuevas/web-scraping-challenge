@@ -29,16 +29,6 @@ def scrape():
         para = item.find('div', class_='article_teaser_body')
         news_p.append(para)
 
-        print("-----------------------------")
-        print(title.text.strip())
-        print(para.text.strip())
-
-        try:
-            browser.links.find_by_partial_text('show more').click()
-          
-        except:
-            print("Scraping Complete")
-
 
     # Get featured image url
  
@@ -52,7 +42,7 @@ def scrape():
     df = table[0]
     df
 
-    df.to_html('facts_table.html')
+    mars_table = df.to_html('facts_table.html')
 
 
     ### Mars Hemispheres ###

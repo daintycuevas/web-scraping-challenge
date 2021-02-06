@@ -9,8 +9,9 @@
 <body>
     <div class="container"></div>
         <div class="jumbotron text-center">
-          <h1 class="display-4">Mission to Mars</h1>
-          <a class="btn btn-primary btn-lg" href="{{ url_for('scrape_mars') }}" role="button">Scrape New Data</a>
+          <h1 class="display-4"><b>Mission to Mars</b></h1>
+          <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a>
+          <script src="app.py"></script>
         </div>
     </div>
     <div class="container"></div>
@@ -20,9 +21,26 @@
             </div>
         </div>
 
-    </div>
-        
+        <!-- Mars image-->
+        <div class="row">
+            <div class="col-md-9">
+              <h2><b>Featured Mars Image</b></h2>
+            </div>
+        </div>
 
+        <!-- HTML data-->
+        <div class="row">
+            <div class="col-md-12">
+              <h4><b>Mars Facts</b></h4>
+            </div>
+        </div>
+        
+        <!-- images and title-->
+        <div class="row" style="margin-top:80px;">
+            <div class="page-header">
+              <h2 class="text-center"><b>Mars Hemispheres</b></h2>
+            </div>
+        </div>
 
 
 
