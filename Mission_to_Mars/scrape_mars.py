@@ -41,17 +41,7 @@ def scrape_info():
 
 
     # Get featured image url
-    # url = 'https://www.jpl.nasa.gov/images/?search=&category=Mars'
-    # browser.visit(url)
-    # html = browser.html
-    # soup = BeautifulSoup(html, 'lxml')
-
-    # img_path = soup.find('img', id='96452')['src']
-
-    # featured_img_url = 'https://www.jpl.nasa.gov' + img_path
-
-    # print(featured_img_url)  
-
+ 
 
     # Get Mars facts table
     url = 'https://space-facts.com/mars/'
