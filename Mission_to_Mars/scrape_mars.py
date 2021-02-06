@@ -5,7 +5,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 import pandas as pd
 
-def scrape_info():
+def scrape():
     executable_path = {'executable_path': ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=False)
 
@@ -116,9 +116,11 @@ def scrape_info():
         hemisphere_image_urls = (f"'title': {title}, 'img_url': {img_url}")
         print(hemisphere_image_urls)
 
+    
+
 
 if __name__=="__main__":
-    print(scrape_info())
+    print(scrape())
 
 
 

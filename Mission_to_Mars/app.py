@@ -25,6 +25,7 @@ def index():
 def scrape():
     mars_data = scrape_mars.scrape_info()
     mongo.db.collection.update({}, mars_data, upsert=True)
+    flash('Process complete!')
     return redirect("/")
     
 
