@@ -111,11 +111,15 @@ def scrape():
     img_url = 'https://astrogeology.usgs.gov' + img_path
     all_img_url.append(img_url)
 
-
-    for title, url in zip(all_title, all_img_url):
-        hemisphere_image_urls = (f"'title': {title}, 'img_url': {img_url}")
-        print(hemisphere_image_urls)
-
+    for title, paragraph, img_title, img_url in zip(news_title, news_p, all_title, all_img_url):
+    
+        results = {
+                'title': title,
+                'paragraph': paragraph,
+                'image_title': img_title,
+                'image_url': img_url
+                }
+        print(results)
     
 
 
